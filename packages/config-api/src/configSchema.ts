@@ -84,6 +84,9 @@ const BrowserConfigSchema = z
     openInBackground: z.boolean().optional(),
     profile: z.string().optional(),
     args: z.array(z.string()).optional(),
+    newWindow: z.boolean().optional(),
+    incognito: z.boolean().optional(),
+    newTab: z.boolean().optional(),
   })
   .identifier("BrowserConfig")
   .describe("A browser or app to open for urls");
@@ -95,6 +98,9 @@ export const BrowserConfigStrictSchema = z.object({
   profile: z.string(),
   args: z.array(z.string()),
   url: z.string(),
+  newWindow: z.boolean().optional(),
+  incognito: z.boolean().optional(),
+  newTab: z.boolean().optional(),
 });
 
 const BrowserResolverSchema = z

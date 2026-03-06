@@ -384,4 +384,63 @@ describe("resolveBrowser", () => {
       url: "https://example.com/",
     });
   });
+
+  it("resolves browser with newWindow flag", () => {
+    const result = resolveBrowser(
+      { name: "Chrome", newWindow: true },
+      mockUrl,
+      mockOptions
+    );
+    expect(result).toMatchObject({
+      name: "Chrome",
+      newWindow: true,
+      url: "https://example.com/",
+    });
+  });
+
+  it("resolves browser with incognito flag", () => {
+    const result = resolveBrowser(
+      { name: "Chrome", incognito: true },
+      mockUrl,
+      mockOptions
+    );
+    expect(result).toMatchObject({
+      name: "Chrome",
+      incognito: true,
+      url: "https://example.com/",
+    });
+  });
+
+  it("resolves browser with newTab flag", () => {
+    const result = resolveBrowser(
+      { name: "Chrome", newTab: true },
+      mockUrl,
+      mockOptions
+    );
+    expect(result).toMatchObject({
+      name: "Chrome",
+      newTab: true,
+      url: "https://example.com/",
+    });
+  });
+
+  it("combines newWindow, incognito, and profile", () => {
+    const result = resolveBrowser(
+      {
+        name: "Chrome",
+        newWindow: true,
+        incognito: true,
+        profile: "Work",
+      },
+      mockUrl,
+      mockOptions
+    );
+    expect(result).toMatchObject({
+      name: "Chrome",
+      newWindow: true,
+      incognito: true,
+      profile: "Work",
+      url: "https://example.com/",
+    });
+  });
 });

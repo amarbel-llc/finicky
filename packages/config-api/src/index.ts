@@ -153,6 +153,9 @@ export function createBrowserConfig(
     openInBackground: undefined,
     profile: "",
     args: [],
+    newWindow: undefined,
+    incognito: undefined,
+    newTab: undefined,
   };
 
   if (browser === null) {

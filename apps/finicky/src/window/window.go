@@ -22,9 +22,9 @@ import (
 )
 
 var (
-	messageQueue []string
-	queueMutex   sync.Mutex
-	windowReady  bool
+	messageQueue   []string
+	queueMutex     sync.Mutex
+	windowReady    bool
 	TestUrlHandler func(string)
 )
 
